@@ -1,7 +1,7 @@
 <?php
-namespace Emimaster16\Autorizacion\Tests\Models;
+namespace Cxeducativa\Autorizacion\Tests\Models;
 
-use Emimaster16\Autorizacion\Traits\AutorizacionTrait;
+use Cxeducativa\Autorizacion\Traits\AutorizacionTrait;
 use Illuminate\Database\Eloquent\Model;
 
 class Usuario extends Model

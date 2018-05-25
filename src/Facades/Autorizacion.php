@@ -1,5 +1,5 @@
 <?php
-namespace Emimaster16\Autorizacion\Facades;
+namespace Cxeducativa\Autorizacion\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

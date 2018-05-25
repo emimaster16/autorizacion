@@ -1,13 +1,13 @@
 {
-    "name": "emimaster16/autorizacion",
+    "name": "cxeducativa/autorizacion",
     "description": "Laravel 5 Perfiles y Permisos ",
     "keywords": ["autorizacion", "perfiles", "permisos", "auth", "laravel", "emimaster16"],
     "license": "MIT",
     "authors": [
         {
         	
-            "name": "Conexion Educativa",
-            "email": "soporte@cxeducativa.com"
+            "name": "Eminson Mendoza",
+            "email": "emimaster16@gmail.com"
         }
     ],
     "require": {
@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Emimaster16\\Autorizacion\\": "src/"
+            "Cxeducativa\\Autorizacion\\": "src/"
         }
     },
     "extra": {
@@ -28,10 +28,10 @@
         },
         "laravel": {
             "providers": [
-                "Emimaster16\\Autorizacion\\AutorizacionServiceProvider"
+                "Cxeducativa\\Autorizacion\\AutorizacionServiceProvider"
             ],
             "aliases": {
-                "Autorizacion": "Emimaster16\\Autorizacion\\Facades\\Autorizacion"
+                "Autorizacion": "Cxeducativa\\Autorizacion\\Facades\\Autorizacion"
             }
         }
     },
@@ -43,7 +43,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-             "Emimaster16\\Autorizacion\\Tests\\": "tests/"
+             "Cxeducativa\\Autorizacion\\Tests\\": "tests/"
         }
     },
     "scripts": {

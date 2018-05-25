@@ -1,5 +1,5 @@
 <?php
-namespace Emimaster16\Autorizacion\Traits;
+namespace Cxeducativa\Autorizacion\Traits;
 
 /**
  * @tutorial Working Class
@@ -21,13 +21,13 @@ trait PermisoTrait
     }
 
     /**
-     * Users and Roles can have many permissions
+     * Users and Roles can have many permisos
      *
      * @return Illuminate\Database\Eloquent\Model
      */
     public function permisos()
     {
-        return $this->belongsToMany('\Emimaster16\Autorizacion\Models\Permiso')->withTimestamps();
+        return $this->belongsToMany('\Cxeducativa\Autorizacion\Models\Permiso')->withTimestamps();
     }
 
     /**
@@ -70,12 +70,12 @@ trait PermisoTrait
      */
     public function asignarPermiso($idPermiso = null)
     {
-        $permisos = $this->permissions;
+        $permisos = $this->permisos;
         
         if (! $permisos->contains($idPermiso)) {
-            $this->flushPermissionCache();
+            $this->flushPermisoCache();
             
-            return $this->permissions()->attach($idPermiso);
+            return $this->permisos()->attach($idPermiso);
         }
         
         return false;
@@ -88,11 +88,11 @@ trait PermisoTrait
      *
      * @return bool
      */
-    public function revokePermission($idPermiso = '')
+    public function revocarPermiso($idPermiso = '')
     {
-        $this->flushPermissionCache();
+        $this->flushPermisoCache();
         
-        return $this->permissions()->detach($idPermiso);
+        return $this->permisos()->detach($idPermiso);
     }
 
     /**
@@ -102,23 +102,23 @@ trait PermisoTrait
      *
      * @return bool
      */
-    public function syncPermissions(array $idPermisos = [])
+    public function sincronizarPermiso(array $idPermisos = [])
     {
-        $this->flushPermissionCache();
+        $this->flushPermisoCache();
         
-        return $this->permissions()->sync($idPermisos);
+        return $this->permisos()->sync($idPermisos);
     }
 
     /**
-     * Revokes all permissions from the user or role.
+     * Revokes all permisos from the user or role.
      *
      * @return bool
      */
-    public function revokeAllPermissions()
+    public function revocarPermisos()
     {
-        $this->flushPermissionCache();
+        $this->flushPermisoCache();
         
-        return $this->permissions()->detach();
+        return $this->permisos()->detach();
     }
 
     /**
@@ -144,7 +144,7 @@ trait PermisoTrait
     }
 
     /**
-     * Check if the or all requested permissions are satisfied
+     * Check if the or all requested permisos are satisfied
      *
      * @param mixed $permiso            
      * @param array $permisos            
@@ -165,7 +165,7 @@ trait PermisoTrait
     }
 
     /**
-     * Check if one of the requested permissions are satisfied
+     * Check if one of the requested permisos are satisfied
      *
      * @param array $permiso            
      * @param array $permisos            

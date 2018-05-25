@@ -1,10 +1,27 @@
 <?php
-namespace Emimaster16\Autorizacion\Models;
+namespace Cxeducativa\Autorizacion\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @tutorial Working Class
+ * @author Eminson Mendoza ~~ emimaster16@gmail.com
+ * @since {24/05/2018}
+ */
 class Permiso extends Model
 {
+
+    /**
+     *
+     * @var string
+     */
+    protected $table = 'permisos';
+
+    /**
+     *
+     * @var string
+     */
+    protected $primaryKey = 'id_permiso';
 
     /**
      * The attributes that are fillable via mass assignment.
@@ -14,14 +31,8 @@ class Permiso extends Model
     protected $fillable = [
         'descripcion',
         'nombre',
-        'url',
+        'url'
     ];
-
-    /**
-     * 
-     * @var string
-     */
-    protected $table = 'permisos';
 
     /**
      *
@@ -32,7 +43,7 @@ class Permiso extends Model
      */
     public function perfiles()
     {
-        return $this->belongsToMany('\Emimaster16\Autorizacion\Models\Perfil')->withTimestamps();
+        return $this->belongsToMany('\Cxeducativa\Autorizacion\Models\Perfil')->withTimestamps();
     }
 
     /**

@@ -1,5 +1,5 @@
 <?php
-namespace Emimaster16\Autorizacion;
+namespace Cxeducativa\Autorizacion;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\Application;

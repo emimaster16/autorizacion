@@ -1,11 +1,11 @@
 <?php
 
-namespace Emimaster16\Autorizacion\Tests;
+namespace Cxeducativa\Autorizacion\Tests;
 
 use Illuminate\Database\Schema\Blueprint;
-use Emimaster16\Autorizacion\Tests\Models\User;
-use Emimaster16\Autorizacion\Models\Role;
-use Emimaster16\Autorizacion\Models\Permission;
+use Cxeducativa\Autorizacion\Tests\Models\User;
+use Cxeducativa\Autorizacion\Models\Role;
+use Cxeducativa\Autorizacion\Models\Permission;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
@@ -73,14 +73,14 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     protected function getPackageProviders($app)
     {
         return [
-            \Emimaster16\Autorizacion\ShinobiServiceProvider::class,
+            \Cxeducativa\Autorizacion\ShinobiServiceProvider::class,
         ];
     }
 
     protected function getPackageAliases($app)
     {
         return [
-            'Shinobi' => \Emimaster16\Autorizacion\Facades\Shinobi::class,
+            'Shinobi' => \Cxeducativa\Autorizacion\Facades\Shinobi::class,
         ];
     }
 }

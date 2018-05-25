@@ -1,8 +1,8 @@
 <?php
 
-namespace Emimaster16\Autorizacion;
+namespace Cxeducativa\Autorizacion;
 
-use Emimaster16\Autorizacion\Models\Perfil;
+use Cxeducativa\Autorizacion\Models\Perfil;
 use Illuminate\Contracts\Auth\Guard;
 
 class Autorizacion
@@ -34,7 +34,7 @@ class Autorizacion
         if ($this->auth->check()) {
             return $this->auth->user()->can($permisos);
         } else {
-            $guest = Role::whereSlug('guest')->first();
+            $guest = Perfil::whereSlug('guest')->first();
 
             if ($guest) {
                 return $guest->can($permisos);
@@ -56,7 +56,7 @@ class Autorizacion
         if ($this->auth->check()) {
             return $this->auth->user()->canAtLeast($permisos);
         } else {
-            $guest = Role::whereSlug('guest')->first();
+            $guest = Perfil::whereSlug('guest')->first();
 
             if ($guest) {
                 return $guest->canAtLeast($permisos);

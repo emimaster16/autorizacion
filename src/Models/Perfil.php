@@ -1,7 +1,7 @@
 <?php
-namespace Emimaster16\Autorizacion\Models;
+namespace Cxeducativa\Autorizacion\Models;
 
-use Emimaster16\Autorizacion\Traits\PermisoTrait;
+use Cxeducativa\Autorizacion\Traits\PermisoTrait;
 use Illuminate\Database\Eloquent\Model;
 use Config;
 
@@ -13,9 +13,21 @@ use Config;
  */
 class Perfil extends Model
 {
-    use PermissionTrait {
-        flushPermissionCache as parentFlushPermissionCache;
+    use PermisoTrait {
+        flushPermisoCache as parentFlushPermisoCache;
     }
+
+    /**
+     *
+     * @var string
+     */
+    protected $table = 'perfiles';
+
+    /**
+     *
+     * @var string
+     */
+    protected $primaryKey = 'id_perfil';
 
     /**
      *
@@ -27,12 +39,6 @@ class Perfil extends Model
         'nombre',
         'url'
     ];
-
-    /**
-     *
-     * @var string
-     */
-    protected $table = 'perfiles';
 
     /**
      *

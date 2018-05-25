@@ -1,7 +1,7 @@
 <?php
-namespace Emimaster16\Autorizacion\Traits;
+namespace Cxeducativa\Autorizacion\Traits;
 
-use Emimaster16\Autorizacion\Models\Perfil;
+use Cxeducativa\Autorizacion\Models\Perfil;
 
 /**
  *
@@ -30,7 +30,7 @@ trait AutorizacionTrait
      */
     public function perfiles()
     {
-        return $this->belongsToMany('\Emimaster16\Autorizacion\Models\Perfil')->withTimestamps();
+        return $this->belongsToMany('\Cxeducativa\Autorizacion\Models\Perfil')->withTimestamps();
     }
 
     /**

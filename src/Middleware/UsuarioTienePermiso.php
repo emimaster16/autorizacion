@@ -1,5 +1,5 @@
 <?php
-namespace Emimaster16\Autorizacion\Middleware;
+namespace Cxeducativa\Autorizacion\Middleware;
 
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
